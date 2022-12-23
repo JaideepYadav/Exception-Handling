@@ -1,0 +1,46 @@
+
+#exception is raised when program is syntatically corect but the code result it in error .it will not stop the execution of the program 
+# ZeroDivisionError
+# try and except statement are used to catch and handle exception in python statement that can raise exception are lept in try block and stament handle exception kept in except block
+try:
+    a=int(input('enter value:'))
+    b=int(input('enter another value:'))
+    x=a/b
+    print(x)
+except ZeroDivisionError:
+    print('cant divide by zero')
+
+l=[1,2,3,4,5]
+#print(l[5])
+try:
+    print('new element: ',l[3])
+    print('next element: ',l[5])
+except:
+    print('next element not present')
+
+#catch exception:  a try staemnt can have more than one except block to handle the different exception
+def fun(n):
+    if n<4:
+        x=n/(n-3)
+    print(x)
+fun(4)
+try:
+    fun(3)
+    #fun(4)
+except ZeroDivisionError:
+    print('cant divide by zero')
+except NameError:
+    print('variable not defined')
+
+# try with else clause = in python also use else clause which must present after all except clauses
+
+try:
+    a=int(input('enter the value of a='))
+    b=int(input('enter the value of b='))
+    c=a/b
+except ZeroDivisionError:
+    print('cant divide by zero')
+else:
+    print('value of c=',c)
+finally:
+    print('end of the program')
